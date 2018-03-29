@@ -6,3 +6,5 @@ workspace = "../"
 [dependencies]
 conform = { path = "../conform" }
 conform-derive = { path = "../conform-derive" }
+validator = "0.6"
+validator_derive = "0.6"

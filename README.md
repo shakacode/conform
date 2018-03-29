@@ -55,6 +55,18 @@ fn main() {
 
 `let` binding must be mutable.
 
+### Usage with validator
+You can use `conform` in conjunction with [`validator`](https://github.com/Keats/validator):
+
+```rust
+match user.conform().validate() {
+  Ok(_) => /* save `user` to DB */,
+  Err(err) => /* handle validation `err` */,
+}
+```
+
+See [full example](./examples/src/main.rs).
+
 ### Transformations
 
 #### `trim`
