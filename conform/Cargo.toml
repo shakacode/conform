@@ -1,0 +1,12 @@
+[package]
+name = "conform"
+description = "Macro to transform struct string fields in place"
+version = "0.0.1"
+authors = ["Alex Fedoseev <alex.fedoseev@gmail.com>"]
+license = "MIT"
+homepage = "https://github.com/alexfedoseev/conform"
+repository = "https://github.com/alexfedoseev/conform"
+keywords = ["api", "strings"]
+
+[dependencies]
+inflections = "1.1.1"

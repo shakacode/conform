@@ -1,0 +1,8 @@
+[package]
+name = "conform-example"
+version = "0.0.0"
+workspace = "../"
+
+[dependencies]
+conform = { path = "../conform" }
+conform-derive = { path = "../conform-derive" }

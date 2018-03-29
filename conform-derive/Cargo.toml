@@ -1,0 +1,17 @@
+[package]
+name = "conform-derive"
+description = "Macros 1.1 implementation of #[derive(Conform)]"
+version = "0.0.1"
+authors = ["Alex Fedoseev <alex.fedoseev@gmail.com>"]
+license = "MIT"
+homepage = "https://github.com/alexfedoseev/conform"
+repository = "https://github.com/alexfedoseev/conform"
+keywords = ["api", "strings"]
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = { version = "0.12.14", features = ["extra-traits"] }
+quote = "0.4.2"
+conform = { version = "0.0.1", path = "../conform" }
