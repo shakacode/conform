@@ -1,4 +1,8 @@
-# conform
+# Conform
+
+[![crates.io version](https://img.shields.io/crates/v/conform.svg?style=flat-square)](https://crates.io/crates/conform)
+[![build status](https://img.shields.io/travis/alexfedoseev/conform/master.svg?style=flat-square)](https://travis-ci.org/alexfedoseev/conform)
+[![license](https://img.shields.io/crates/l/conform.svg?style=flat-square)](https://crates.io/crates/conform)
 
 Rust macro to transform struct string fields in place.
 
