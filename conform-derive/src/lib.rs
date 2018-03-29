@@ -131,6 +131,7 @@ fn impl_conform(ast: &syn::DeriveInput) -> quote::Tokens {
   quote! {
     impl #impl_generics Conform for #ident #ty_generics #where_clause {
       fn conform(&mut self) -> &mut Self {
+        use conform;
         #(#tokens)*
         self
       }
