@@ -14,9 +14,9 @@ use std::borrow::Cow;
 use conform::Conform;
 use validator::{Validate, ValidationError, ValidationErrors};
 
-/// Integration with validate: validation success
+/// Usage with validate: validation success
 #[test]
-fn assert_integration_with_validate_success() {
+fn assert_usage_with_validate_success() {
   #[derive(Conform, Validate)]
   struct Subject {
     #[conform(trim, lower)]
@@ -31,9 +31,9 @@ fn assert_integration_with_validate_success() {
   assert_eq!(subject.conform().validate(), Ok(()));
 }
 
-/// Integration with validate: validation failure
+/// Usage with validate: validation failure
 #[test]
-fn assert_integration_with_validate_failure() {
+fn assert_usage_with_validate_failure() {
   #[derive(Conform, Validate)]
   struct Subject {
     #[conform(trim, lower)]
@@ -54,9 +54,9 @@ fn assert_integration_with_validate_failure() {
   assert_eq!(subject.conform().validate(), Err(errors));
 }
 
-/// Integration with serde: renamed fields
+/// Usage with serde: renamed fields
 #[test]
-fn assert_integration_with_serde() {
+fn assert_usage_with_serde_renamed_field() {
   #[derive(Conform, Deserialize)]
   struct Subject {
     #[serde(rename = "jsonProp")]
