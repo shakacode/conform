@@ -4,6 +4,10 @@ extern crate conform_derive;
 extern crate validator;
 #[macro_use]
 extern crate validator_derive;
+extern crate serde;
+#[macro_use]
+extern crate serde_derive;
+extern crate serde_json;
 
 use std::borrow::Cow;
 
@@ -50,4 +54,21 @@ fn assert_integration_with_validate_failure() {
   assert_eq!(subject.conform().validate(), Err(errors));
 }
 
-// TODO: `serde`
+/// Integration with serde: renamed fields
+#[test]
+fn assert_integration_with_serde() {
+  #[derive(Conform, Deserialize)]
+  struct Subject {
+    #[serde(rename = "jsonProp")]
+    #[conform(lower)]
+    prop: String,
+  }
+
+  let json = r#"{"jsonProp": "FOO"}"#;
+
+  let mut subject: Subject = serde_json::from_str(json).unwrap();
+
+  subject.conform();
+
+  assert_eq!(subject.prop, "foo".to_string());
+}
